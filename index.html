@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- motor de busca -->
     <meta name="description" content="Temporizador estilo Pomodoro" />
     <title>Focus Timer - Pomodoro</title>
+    <!-- faveicon no navegador -->
     <link rel="shortcut icon" href="./assets/faveicon.svg" type="image/x-svg" />
     <link rel="stylesheet" href="style.css" />
+    <!-- add icones -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- JS com modules, com defer (carregar o JS depois do html) -->
+    <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
     <div id="app">
       <button id="toggle-mode">
-        <span class="sr-only">Ativar/Destivar light Mode</span>
+        <span class="sr-only">Ativar light mode</span>
         <i class="ph-bold ph-sun"></i>
+        <!-- formato <i> para add icones/está na regulamentação do site -->
         <i class="ph-bold ph-moon"></i>
       </button>
 
@@ -30,6 +36,7 @@
         <button class="ph ph-pause-circle">
           <span class="sr-only">Pausar contador</span>
         </button>
+        <!-- class secondary para mudar a cor nos modes -->
         <button class="ph ph-timer secondary">
           <span class="sr-only">Ajustar contador</span>
         </button>

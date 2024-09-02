@@ -11,13 +11,16 @@
   --primary-color: hsla(var(--hue), 100%, 63%, 1);
   --controls-bg-color: hsla(var(--hue), 0%, 14%, 1);
   --button-secondary: hsla(var(--hue), 40%, 98%, 1);
-  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  font-size: clamp(
+    40%,
+    1% + 2vw,
+    62.5%
+  ); /* responsividade - fonte fica entre 40 e 62.5% */
 }
 
 html.light {
   --bg-color: hsla(var(--hue), 40%, 98%, 1);
   --text-color: hsla(var(--hue), 5%, 7%, 1);
-  --controls-bg-color: hsla(var(--hue), 0%, 14%, 1);
 }
 
 html.light .ph-sun,
@@ -34,12 +37,13 @@ html:not(.light) .ph-moon {
   color: var(--text-color);
 }
 
+/* só o screen reader capta - acessibilidade aos botões - class utilitária */
 .sr-only {
   width: 1px;
   height: 1px;
   position: absolute;
-  overflow: hidden;
-
+  overflow: hidden; /* desaparece com os <span> */
+  /* modelo próprio do sr-only css */
   margin: -1px;
   padding: 0;
   border: 0;
@@ -50,17 +54,17 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   display: grid;
-  height: 100vh;
-  place-content: center;
+  height: 100vh; /* app ocupa a tela toda */
+  place-content: center; /* conteúdo centralizado na vertical e horizontal (liberado pelo grid) */
 }
 
 #app {
   display: grid;
-  justify-items: center;
+  justify-items: center; /* alinhamento do itens na horizontal */
 }
 
 .flex {
-  display: flex;
+  display: flex; /* classe utilitária (junta os icones) */
 }
 
 #timer {
@@ -72,7 +76,7 @@ body {
 #controls {
   margin-top: 1.6rem;
   padding: 2.2rem 4rem;
-  gap: 1.6rem;
+  gap: 1.6rem; /* liberado pela classe utilitária .flex */
   background-color: var(--controls-bg-color);
   border-radius: 999rem;
 }
@@ -90,9 +94,9 @@ button {
 }
 
 /* controls */
-.running .ph-play-circle,
+.running .ph-play-circle, /* .running r .music-on vão ser aplicados no html */
 .running .ph-timer,
-.music-on .ph-speaker-none,
+.music-on .ph-speaker-none, 
 html:not(.running) .ph-pause-circle,
 html:not(.running) .ph-stop-circle,
 html:not(.music-on) .ph-speaker-high {
