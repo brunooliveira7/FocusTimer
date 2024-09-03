@@ -1,12 +1,30 @@
 import state from "./state.js";
 import * as el from "./elements.js";
+import { reset } from "./actions.js";
 
 export function countdown() {
   if (!state.isRunning) {
     return;
   }
-  console.log("iniciou");
-  // funct que executa uma funct depois de um determinado tempo (1000=1s) - recursão/callback - chama ela mesma
+  
+  let minutes = Number(el.minutes.textContent);
+  let seconds = Number(el.seconds.textContent);
+
+  seconds--;
+
+  if (seconds < 0) {
+    seconds = 59;
+    minutes--;
+  }
+
+  if (minutes < 0) {
+    reset()
+    return;
+  }
+
+  updateDisplay(minutes, seconds);
+
+  // funct que executa uma funct depois de um determinado tempo (1000=1s) - recursão/callback - funct chama ela mesma
   setTimeout(() => countdown(), 1000);
 }
 
