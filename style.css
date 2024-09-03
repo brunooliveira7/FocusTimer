@@ -94,7 +94,7 @@ button {
 }
 
 /* controls */
-.running .ph-play-circle, /* .running r .music-on vão ser aplicados no html */
+.running .ph-play-circle, /* .running e .music-on vão ser aplicados no html */
 .running .ph-timer,
 .music-on .ph-speaker-none, 
 html:not(.running) .ph-pause-circle,
