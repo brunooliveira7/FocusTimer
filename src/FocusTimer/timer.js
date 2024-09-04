@@ -1,12 +1,13 @@
 import state from "./state.js";
 import * as el from "./elements.js";
 import { reset } from "./actions.js";
+import { kichenTimer } from "./sounds.js";
 
 export function countdown() {
   if (!state.isRunning) {
     return;
   }
-  
+
   let minutes = Number(el.minutes.textContent);
   let seconds = Number(el.seconds.textContent);
 
@@ -18,10 +19,13 @@ export function countdown() {
   }
 
   if (minutes < 0) {
-    reset()
+    reset();
+
+    kichenTimer.play();
+
     return;
   }
-  
+
   updateDisplay(minutes, seconds);
 
   // funct que executa uma funct depois de um determinado tempo (1000=1s) - recursão/callback - funct chama ela mesma
