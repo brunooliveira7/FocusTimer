@@ -4,6 +4,8 @@ import { reset } from "./actions.js";
 import { kichenTimer } from "./sounds.js";
 
 export function countdown() {
+  clearTimeout(state.countdownId);
+
   if (!state.isRunning) {
     return;
   }
@@ -29,7 +31,7 @@ export function countdown() {
   updateDisplay(minutes, seconds);
 
   // funct que executa uma funct depois de um determinado tempo (1000=1s) - recursão/callback - funct chama ela mesma
-  setTimeout(() => countdown(), 1000);
+  state.countdownId = setTimeout(() => countdown(), 1000);
 }
 
 export function updateDisplay(minutes, seconds) {
