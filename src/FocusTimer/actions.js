@@ -11,11 +11,11 @@ export function toggleRunning() {
 export function reset() {
   state.isRunning = false;
   document.documentElement.classList.remove("running"); //faz o reset da app
-  timer.updateDisplay();
+  timer.updateDisplay(); //faz o reset do display quando chega no 00:00
 }
 
 export function set() {
-  el.minutes.setAttribute("contenteditable", true);
+  el.minutes.setAttribute("contenteditable", true); //no click altera o valor
   el.minutes.focus();
 }
 

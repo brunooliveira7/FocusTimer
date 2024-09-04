@@ -21,7 +21,7 @@ export function countdown() {
     reset()
     return;
   }
-
+  
   updateDisplay(minutes, seconds);
 
   // funct que executa uma funct depois de um determinado tempo (1000=1s) - recursão/callback - funct chama ela mesma
