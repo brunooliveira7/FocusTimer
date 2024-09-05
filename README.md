@@ -12,7 +12,7 @@ O Focus Timer é um aplicativo de produtividade projetado para ajudar usuários 
 </p>
 
 <p align="center">
-  <img alt="License" src="">
+  <img alt="License" src="https://github.com/brunooliveira7/FocusTimer/blob/main/assets/Layout%20FocusTimer.png">
 </p>
 
 <br>
